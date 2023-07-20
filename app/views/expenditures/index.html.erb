@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Expenditures</h1>
+
+<div id="expenditures">
+  <%== pagy_bootstrap_nav(@pagy) %>
+  
+  <% @expenditures.each do |expenditure| %>
+    <%= render expenditure %>
+    <p>
+      <%= link_to "Show this expenditure", expenditure %>
+    </p>
+  <% end %>
+
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>
+
+<%= link_to "New expenditure", new_expenditure_path %>
